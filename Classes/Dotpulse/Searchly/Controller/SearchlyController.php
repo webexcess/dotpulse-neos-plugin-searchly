@@ -25,10 +25,15 @@ class SearchlyController extends ActionController {
     public function indexAction() {
         $searchly__query = isset($_GET['searchly__query']) && $_GET['searchly__query'] != '' ? $_GET['searchly__query'] : null;
         $this->view->assign('searchValue', $searchly__query);
+        $index = $this->request->getInternalArgument('__index');
 
         if ( $searchly__query !== null ) {
             $params = $this->settings['params'];
             $client = new \Elasticsearch\Client($params);
+
+            if ( $index != '' ) {
+                $searchParams['index'] = $index;
+            }
 
             $searchParams['body']['query']['multi_match']['query'] = $searchly__query;
             $searchParams['body']['query']['multi_match']['fields'] = ['title', 'text'];

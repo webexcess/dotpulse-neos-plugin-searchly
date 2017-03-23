@@ -1,11 +1,11 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 <div{attributes -> f:format.raw()}>
-    <form actionUri="{neos:uri.node(node: searchNode)}" method="get">
-        <div class="input-group">
-            <input type="search" name="searchly__query" class="form-control" placeholder="{f:translate(id: 'searchly.input', package: 'Dotpulse.Searchly')}" />
-            <span class="input-group-btn">
-                <button class="btn btn-secondary"><f:translate id="searchly.button" package="Dotpulse.Searchly" /></button>
-            </span>
-        </div>
-    </form>
+	<form actionUri="{neos:uri.node(node: searchNode)}" method="get">
+		<div class="input-group">
+			<input type="search" name="searchly__query" class="form-control" placeholder="{f:translate(id: 'searchly.input', package: 'Dotpulse.Searchly')}" />
+			<span class="input-group-btn">
+				<button class="btn btn-secondary"><f:translate id="searchly.button" package="Dotpulse.Searchly" /></button>
+			</span>
+		</div>
+	</form>
 </div>

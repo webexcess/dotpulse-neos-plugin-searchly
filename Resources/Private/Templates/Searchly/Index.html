@@ -1,36 +1,40 @@
 <div{attributes -> f:format.raw()}>
-    <div class="row">
-    	<div class="col-md-4 col-sm-6">
-    		<form action="" class="search-form" method="get">
-    			<div class="form-group">
-    				<input type="search" name="searchly__query" id="searchly__query" value="{searchValue}" class="form-control" />
-    				<label for="searchly__query" class="control-label"><f:translate id="searchly.input" package="Dotpulse.Searchly" /></label>
-    				<i class="bar"></i>
-    			</div>
-    			<button class="button"><f:translate id="searchly.button" package="Dotpulse.Searchly" /></button>
-    		</form>
-    	</div>
-    </div>
+	<div class="row">
+		<div class="col-md-4 col-sm-6">
+			<form action="" class="search-form" method="get">
+				<div class="form-group">
+					<input type="search" name="searchly__query" id="searchly__query" value="{searchValue}" class="form-control" />
+					<label for="searchly__query" class="control-label"><f:translate id="searchly.input" package="Dotpulse.Searchly" /></label>
+					<i class="bar"></i>
+				</div>
+				<button class="button"><f:translate id="searchly.button" package="Dotpulse.Searchly" /></button>
+			</form>
+		</div>
+	</div>
 
-    <f:if condition="{searchTotal}">
-    	<p class="search-list-total"><f:translate id="searchly.total" package="Dotpulse.Searchly" />: {searchTotal}</p>
-    </f:if>
+	<f:if condition="{searchTotal}">
+		<p class="search-list-total"><f:translate id="searchly.total" package="Dotpulse.Searchly" />: {searchTotal}</p>
+	</f:if>
 
-    <f:if condition="{searchResults}">
-    	<f:then>
-    		<ul class="search-list">
-    			<f:for each="{searchResults}" as="result">
-    				<li class="search-list-item">
-    					<h4><a href="{result._source.url}">{result._source.title}</a></h4>
-    					<p>{result._source.text -> f:format.crop(maxCharacters: crop)}</p>
-    				</li>
-    			</f:for>
-    		</ul>
-    	</f:then>
-    	<f:else>
-    		<f:if condition="{searchValue}">
-    			<p class="search-list-empty"><f:translate id="searchly.empty" package="Dotpulse.Searchly" /></p>
-    		</f:if>
-    	</f:else>
-    </f:if>
+	<div class="row">
+		<div class="col-xl-8 col-lg-10">
+			<f:if condition="{searchResults}">
+				<f:then>
+					<ul class="search-list">
+						<f:for each="{searchResults}" as="result">
+							<li class="search-list-item">
+								<h4><a href="{result._source.url}">{result._source.title}</a></h4>
+								<p>{result._source.text -> f:format.crop(maxCharacters: crop)}</p>
+							</li>
+						</f:for>
+					</ul>
+				</f:then>
+				<f:else>
+					<f:if condition="{searchValue}">
+						<p class="search-list-empty"><f:translate id="searchly.empty" package="Dotpulse.Searchly" /></p>
+					</f:if>
+				</f:else>
+			</f:if>
+		</div>
+	</div>
 </div>

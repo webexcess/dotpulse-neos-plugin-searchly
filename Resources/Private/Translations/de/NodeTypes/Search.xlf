@@ -5,6 +5,15 @@
 			<trans-unit id="ui.label" xml:space="preserve">
 				<source>Searchly Suchresultate</source>
 			</trans-unit>
+			<trans-unit id="groups.settings" xml:space="preserve">
+				<source>Einstellungen</source>
+			</trans-unit>
+			<trans-unit id="properties.index" xml:space="preserve">
+				<source>Index</source>
+			</trans-unit>
+			<trans-unit id="properties.index.ui.help.message" xml:space="preserve">
+				<source>Wenn das Feld leer gelassen wird, wird in allen Indexes gesucht. Mit Komma können auch mehrere Indexes angegeben werden.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
