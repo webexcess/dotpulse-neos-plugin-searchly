@@ -13,11 +13,11 @@ use TYPO3\Flow\Mvc\Controller\ActionController;
  */
 class SearchlyController extends ActionController {
 
-	/**
-	 * @Flow\InjectConfiguration()
-	 * @var array
-	 */
-	protected $settings;
+    /**
+     * @Flow\InjectConfiguration()
+     * @var array
+     */
+    protected $settings;
 
     /**
      * @return void
@@ -30,14 +30,11 @@ class SearchlyController extends ActionController {
             $params = $this->settings['params'];
             $client = new \Elasticsearch\Client($params);
 
+            $searchParams['body']['query']['multi_match']['query'] = $searchly__query;
+            $searchParams['body']['query']['multi_match']['fields'] = ['title', 'text'];
+            // Fuzzy Search
             if ( $this->settings['fuzzy'] === true ) {
-                // Fuzzy Search
-                $searchParams['body']['query']['fuzzy_like_this']['fields'] = ['title', 'text'];
-                $searchParams['body']['query']['fuzzy_like_this']['like_text'] = $searchly__query;
-            } else {
-                // $searchParams['body']['query']['match']['title'] = $searchly__query;
-                $searchParams['body']['query']['multi_match']['query'] = $searchly__query;
-                $searchParams['body']['query']['multi_match']['fields'] = ['title', 'text'];
+                $searchParams['body']['query']['multi_match']['fuzziness'] = 'AUTO';
             }
             
             $searchParams['body']['size'] = $this->settings['size'];
