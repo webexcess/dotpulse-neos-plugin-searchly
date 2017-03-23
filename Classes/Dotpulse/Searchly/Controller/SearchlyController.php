@@ -20,10 +20,10 @@ class SearchlyController extends ActionController {
 	protected $settings;
 
     /**
-     * @param string $searchly__query
      * @return void
      */
-    public function indexAction($searchly__query = null) {
+    public function indexAction() {
+        $searchly__query = isset($_GET['searchly__query']) && $_GET['searchly__query'] != '' ? $_GET['searchly__query'] : null;
         $this->view->assign('searchValue', $searchly__query);
 
         if ( $searchly__query !== null ) {

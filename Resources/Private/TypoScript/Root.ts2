@@ -8,3 +8,13 @@ prototype(Dotpulse.Searchly:Search) < prototype(TYPO3.Neos:Plugin) {
         container = 'container'
     }
 }
+
+prototype(Dotpulse.Searchly:MiniSearchForm) < prototype(TypoScript:Template) {
+    templatePath = 'resource://Dotpulse.Searchly/Private/Templates/TypoScriptObjects/MiniSearchForm.html'
+    attributes = TYPO3.TypoScript:Attributes {
+        class = TypoScript:RawArray {
+            container = 'mini-search-form'
+        }
+    }
+    searchNode = ${q(site)}
+}

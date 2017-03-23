@@ -1,14 +1,14 @@
 <div{attributes -> f:format.raw()}>
     <div class="row">
     	<div class="col-md-4 col-sm-6">
-    		<f:form actionUri="" controller="Searchly" package="Dotpulse.Searchly" class="search-form">
+    		<form action="" class="search-form" method="get">
     			<div class="form-group">
-    				<f:form.textfield type="search" name="searchly__query" id="searchly__query" value="{searchValue}" class="form-control" />
+    				<input type="search" name="searchly__query" id="searchly__query" value="{searchValue}" class="form-control" />
     				<label for="searchly__query" class="control-label"><f:translate id="searchly.input" package="Dotpulse.Searchly" /></label>
     				<i class="bar"></i>
     			</div>
     			<button class="button"><f:translate id="searchly.button" package="Dotpulse.Searchly" /></button>
-    		</f:form>
+    		</form>
     	</div>
     </div>
 
