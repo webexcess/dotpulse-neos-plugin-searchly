@@ -1,0 +1,7 @@
+'Dotpulse.Searchly:Search':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+  ui:
+    label: i18n
+    icon: 'icon-search'
+    group: special

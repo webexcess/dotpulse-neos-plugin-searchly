@@ -1,0 +1,17 @@
+Dotpulse:
+  Searchly:
+    params:
+      hosts: []
+    size: 1000
+    crop: 400
+
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'Dotpulse.Searchly': TRUE
+
+    userInterface:
+      translation:
+        autoInclude:
+          'Dotpulse.Searchly': ['Main', 'NodeTypes/*']

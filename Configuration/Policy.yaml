@@ -1,0 +1,11 @@
+privilegeTargets:
+  'TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+    'Dotpulse.Searchly:Search':
+      matcher: 'method(Dotpulse\Searchly\Controller\SearchlyController->indexAction())'
+
+roles:
+  'TYPO3.Flow:Everybody':
+    privileges:
+      -
+        privilegeTarget: 'Dotpulse.Searchly:Search'
+        permission: GRANT

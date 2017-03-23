@@ -1,0 +1,5 @@
+prototype(Dotpulse.Searchly:Search) < prototype(TYPO3.Neos:Plugin) {
+	package = 'Dotpulse.Searchly'
+	controller = 'Searchly'
+	action = 'index'
+}

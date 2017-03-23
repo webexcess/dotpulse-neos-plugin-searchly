@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="Dotpulse.Searchly" source-language="de" datatype="plaintext">
+		<body>
+			<trans-unit id="searchly.input" xml:space="preserve">
+				<source>Suchen</source>
+			</trans-unit>
+			<trans-unit id="searchly.button" xml:space="preserve">
+				<source>Suchen</source>
+			</trans-unit>
+			<trans-unit id="searchly.total" xml:space="preserve">
+				<source>Total</source>
+			</trans-unit>
+			<trans-unit id="searchly.empty" xml:space="preserve">
+				<source>Keine Resultate gefunden</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

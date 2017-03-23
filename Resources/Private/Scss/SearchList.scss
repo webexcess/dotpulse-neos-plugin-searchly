@@ -1,0 +1,23 @@
+.search-form {
+	margin-bottom: pixel(40);
+}
+
+.search-list-total {
+	margin-bottom: 0;
+}
+
+.search-list {
+	margin-bottom: pixel(40);
+	padding-left: 0;
+	list-style: none;
+}
+
+.search-list-item {
+	margin-top: pixel(40);
+	h4 {
+		margin-bottom: pixel(5);
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
