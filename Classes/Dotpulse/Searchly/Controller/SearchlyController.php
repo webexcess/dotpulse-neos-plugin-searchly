@@ -30,11 +30,17 @@ class SearchlyController extends ActionController {
             $params = $this->settings['params'];
             $client = new \Elasticsearch\Client($params);
 
-            // $searchParams['body']['query']['match']['title'] = $searchly__query;
-            $searchParams['body']['query']['multi_match']['query'] = $searchly__query;
-            $searchParams['body']['query']['multi_match']['fields'] = ['title', 'text'];
-            $searchParams['body']['size'] = $this->settings['size'];
+            if ( $this->settings['fuzzy'] === true ) {
+                // Fuzzy Search
+                $searchParams['body']['query']['fuzzy_like_this']['fields'] = ['title', 'text'];
+                $searchParams['body']['query']['fuzzy_like_this']['like_text'] = $searchly__query;
+            } else {
+                // $searchParams['body']['query']['match']['title'] = $searchly__query;
+                $searchParams['body']['query']['multi_match']['query'] = $searchly__query;
+                $searchParams['body']['query']['multi_match']['fields'] = ['title', 'text'];
+            }
             
+            $searchParams['body']['size'] = $this->settings['size'];
             $results = $client->search($searchParams);
 
             $this->view->assignMultiple(array(
@@ -43,6 +49,8 @@ class SearchlyController extends ActionController {
                 'crop' => $this->settings['crop']
             ));
         }
+
+        $this->view->assign('attributes', $this->request->getInternalArgument('__attributes'));
     }
 
 }

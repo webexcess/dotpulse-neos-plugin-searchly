@@ -1,5 +1,10 @@
+namespace: TypoScript=TYPO3.TypoScript
 prototype(Dotpulse.Searchly:Search) < prototype(TYPO3.Neos:Plugin) {
-	package = 'Dotpulse.Searchly'
-	controller = 'Searchly'
-	action = 'index'
+    package = 'Dotpulse.Searchly'
+    controller = 'Searchly'
+    action = 'index'
+    
+    attributes.class = TypoScript:RawArray {
+        container = 'container'
+    }
 }
