@@ -4,7 +4,6 @@ Dotpulse:
       hosts: []
     size: 1000
     crop: 400
-    fuzzy: TRUE
 
 TYPO3:
   Neos:

@@ -36,11 +36,8 @@ class SearchlyController extends ActionController {
             }
 
             $searchParams['body']['query']['multi_match']['query'] = $searchly__query;
+            $searchParams['body']['query']['multi_match']['type'] = 'phrase_prefix';
             $searchParams['body']['query']['multi_match']['fields'] = ['title', 'text'];
-            // Fuzzy Search
-            if ( $this->settings['fuzzy'] === true ) {
-                $searchParams['body']['query']['multi_match']['fuzziness'] = 'AUTO';
-            }
             
             $searchParams['body']['size'] = $this->settings['size'];
             $results = $client->search($searchParams);
